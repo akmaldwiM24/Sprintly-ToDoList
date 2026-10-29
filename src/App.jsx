@@ -12,32 +12,7 @@ import TaskBoard from "./components/TaskBoard";
 import AddTaskModal from "./components/AddTaskModal";
 import "./App.css";
 
-const initialTasks = [
-  {
-    id: 1,
-    title: "UI Research",
-    description: "Research user needs and dashboard inspiration.",
-    priority: "medium",
-    status: "todo",
-    date: "28 Oct 2026",
-  },
-  {
-    id: 2,
-    title: "Dashboard UI",
-    description: "Design dashboard layout and task management interface.",
-    priority: "high",
-    status: "in-progress",
-    date: "30 Oct 2026",
-  },
-  {
-    id: 3,
-    title: "Project Brief",
-    description: "Define project scope, features, and requirements.",
-    priority: "low",
-    status: "done",
-    date: "24 Oct 2026",
-  },
-];
+const initialTasks = [];
 
 const initialProjects = [
     {
