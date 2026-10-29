@@ -14,13 +14,7 @@ import "./App.css";
 
 const initialTasks = [];
 
-const initialProjects = [
-    {
-        id: "sprintly-demo",
-        name: "SPRINTLY Dashboard",
-        description: "Frontend task management application."
-    }
-];
+const initialProjects = [];
 
 function App() {
   const [tasks, setTasks] = useState(() => {
