@@ -1,0 +1,243 @@
+
+.task-board {
+    margin-top: 40px;
+    color: var(--text-primary);
+}
+
+.task-board h2 {
+    font-size: 24px;
+    margin: 0 0 24px;
+    color: var(--text-primary);
+}
+
+/* KANBAN COLUMNS */
+
+.board-columns {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.board-column {
+    background-color: var(--board-column);
+    border-radius: 20px;
+    padding: 16px;
+    min-width: 0;
+    min-height: 320px;
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.column-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: var(--text-primary);
+}
+
+.column-header span {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+.column-tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* TASK CARDS */
+
+.task-card {
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    padding: 16px;
+    border-radius: 12px;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.task-card h4 {
+    font-size: 15px;
+    margin: 14px 0 8px;
+    color: var(--text-primary);
+}
+
+.task-card p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* PRIORITY BADGES */
+
+.priority-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.priority-badge.high {
+    background-color: #FFF0DF;
+    color: #AD6414;
+}
+
+.priority-badge.medium {
+    background-color: #FEF9C3;
+    color: #854D0E;
+}
+
+.priority-badge.low {
+    background-color: #DCFCE7;
+    color: #166534;
+}
+
+/* TASK FOOTER */
+
+.task-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-secondary);
+}
+
+.task-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.task-delete {
+    border: none;
+    background-color: #FEE2E2;
+    color: #B91C1C;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
+
+.task-delete:hover {
+    background-color: #FECACA;
+}
+
+.task-edit {
+    border: none;
+    background-color: #EEF2FF;
+    color: #4F46E5;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.task-edit:hover {
+    background-color: #C7D2FE;
+}
+
+/* BOARD TOOLBAR */
+
+.board-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.board-toolbar h2 {
+    margin: 0;
+}
+
+.board-toolbar select {
+    padding: 10px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.board-toolbar select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.board-filters {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* HOVER ANIMATION */
+
+@media (hover: hover) {
+    .task-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+    .board-columns {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 800px) {
+    .board-columns {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .board-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .board-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .board-filters select {
+        width: 100%;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .task-card {
+        transition: none;
+    }
+
+    .task-card:hover {
+        transform: none;
+    }
+
+    .task-delete {
+        transition: none;
+    }
+}
